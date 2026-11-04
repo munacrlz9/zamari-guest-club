@@ -1,6 +1,6 @@
 // Zamari Guest Club — client starter. Never place a Supabase service-role key here.
 const SUPABASE_URL = "https://hotwkjqhcvngmqodsxrk.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR_PUBLISHABLE_KEY";
+const SUPABASE_ANON_KEY = "sb_publishable_7kiO1FkqqxuuTsJgMONl7g_g3jmSy3D";
 const configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase);
 const db = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
