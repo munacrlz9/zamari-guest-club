@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <title>Zamari Guest Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">Z</span><span>ZAMARI <small>GUEST CLUB</small></span></a>
+    <div class="top-actions"><span class="status" id="connection-status">Preview mode</span><button class="btn btn-quiet hidden" id="logout-btn">Log out</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">THE EXPERIENCE BEYOND THE STAY</div>
+      <h1>Stay connected.<br><em>Experience more.</em></h1>
+      <p>Your Zamari moments deserve more. Join the club, share your experiences and unlock thoughtful rewards.</p>
+      <div class="hero-tags"><span>STAY</span><i>·</i><span>WINE</span><i>·</i><span>DINE</span><i>·</i><span>ENJOY</span></div>
+    </section>
+
+    <section class="auth-panel panel" id="auth-panel">
+      <div class="section-kicker">YOUR MEMBERSHIP STARTS HERE</div>
+      <h2>Welcome to the club.</h2>
+      <p class="muted">Create your guest account or sign in to continue.</p>
+      <div class="tabs"><button class="tab active" data-mode="signup">Create account</button><button class="tab" data-mode="login">Sign in</button></div>
+      <form id="auth-form">
+        <label>Full name<input id="full-name" autocomplete="name" placeholder="Your name" required></label>
+        <label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label>Password<input id="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required></label>
+        <button class="btn btn-gold full" id="auth-submit" type="submit">Create my account</button>
+      </form>
+      <p class="notice" id="auth-message" role="status"></p>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="welcome-row"><div><div class="section-kicker">YOUR MEMBER SPACE</div><h2>Good to have you, <span id="member-name">Guest</span>.</h2></div><div class="member-chip"><span>✦</span> ZAMARI MEMBER</div></div>
+      <div class="stats">
+        <article class="stat-card"><span>YOUR CREDITS</span><strong id="credit-total">0</strong><small>Keep experiencing Zamari</small></article>
+        <article class="stat-card"><span>MEMBERSHIP</span><strong>Guest</strong><small>Your Zamari journey starts here</small></article>
+      </div>
+      <div class="content-grid">
+        <section class="panel"><div class="section-kicker">TELL US HOW WE DID</div><h3>Share your experience.</h3><p class="muted">Your feedback helps us make every visit better.</p>
+          <form id="feedback-form">
+            <label>What was your experience about?
+              <select id="category"><option>Stay</option><option>Wine</option><option>Dine</option><option>Enjoy</option></select>
+            </label>
+            <label>Your rating
+              <select id="rating"><option value="5">5 — Excellent</option><option value="4">4 — Very good</option><option value="3">3 — Good</option><option value="2">2 — Could be better</option><option value="1">1 — Needs attention</option></select>
+            </label>
+            <label>Your comments<textarea id="comment" rows="4" placeholder="Tell us about your Zamari moment..." required></textarea></label>
+            <button class="btn btn-gold" type="submit">Send feedback</button>
+          </form><p class="notice" id="feedback-message" role="status"></p>
+        </section>
+        <section class="panel rewards-panel"><div class="section-kicker">THE LITTLE EXTRAS</div><h3>Rewards to look forward to.</h3>
+          <div class="reward"><div class="reward-icon">01</div><div><strong>Welcome drink</strong><p>Reward milestone: 50 credits</p></div></div>
+          <div class="reward"><div class="reward-icon">02</div><div><strong>Dining treat</strong><p>Reward milestone: 100 credits</p></div></div>
+          <div class="reward"><div class="reward-icon">03</div><div><strong>Next-stay privilege</strong><p>Reward milestone: 200 credits</p></div></div>
+          <p class="fine-print">Reward thresholds are displayed as a concept during this first build. Management will confirm the final earning and redemption rules before launch.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="bottom-note"><span class="gold-line"></span><p>Crafted warmth. Designed for experience.</p><small>ZAMARI SUITES &amp; AIRBNB · ONGATA RONGAI</small></section>
+  </main>
+  <footer>© <span id="year"></span> Zamari Guest Club. All experiences welcome.</footer>
+</body>
+</html>
